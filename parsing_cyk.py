@@ -1,9 +1,11 @@
 import streamlit as st
 from rules import RULES_CFG
 
+
 def algortima_cyk(kalimat):
     empty = '\u2205'
     banyak_kata = len(kalimat)
+    print(banyak_kata)
     T = [[" " for j in range(banyak_kata)] for i in range(banyak_kata)]
     # filling_table = [[" " for j in range(banyak_kata)] for i in range(banyak_kata)]
     
@@ -14,6 +16,7 @@ def algortima_cyk(kalimat):
             for RHS in rule:
                 if len(RHS) == 1 and RHS[0] == kalimat[j]:    
                     T[j][j] += LHS + " "
+                    print
 
     for j in range(0, banyak_kata):
         for i in range(j, -1, -1):
@@ -22,7 +25,7 @@ def algortima_cyk(kalimat):
                     for RHS in rule:
                         if len(RHS) == 2 and RHS[0] in T[i][k].split() and RHS[1] in T[k+1][j].split():
                             T[i][j] += LHS + " "
-    # print(T)
+                            # print(T)
                                 
     if "K" in T[0][banyak_kata-1].split():
         print("True")
@@ -35,4 +38,5 @@ def algortima_cyk(kalimat):
         st.error("Berdasarkan hasil pemeriksaan, kalimat yang diinputkan adalah kalimat TIDAK VALID")
     
         
-# algortima_cyk("Kiki tertidur di kampus".split())
+# algortima_cyk("sekitar lima mahasiswa mengikuti pengabdian tersebut".split())
+# algortima_cyk("ani sedang berlibur di pantai".split())
