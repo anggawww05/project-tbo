@@ -3,14 +3,10 @@ from rules import RULES_CFG
 
 
 def algortima_cyk(kalimat):
-    empty = '\u2205'
-    banyak_kata = len(kalimat)
-    print(banyak_kata)
-    T = [[" " for j in range(banyak_kata)] for i in range(banyak_kata)]
-    # filling_table = [[" " for j in range(banyak_kata)] for i in range(banyak_kata)]
-    
-    # print(T);
 
+    banyak_kata = len(kalimat)
+    T = [[" " for j in range(banyak_kata)] for i in range(banyak_kata)]
+    
     for j in range(0, banyak_kata):
         for LHS, rule in RULES_CFG.items():
             for RHS in rule:
@@ -36,7 +32,5 @@ def algortima_cyk(kalimat):
     else:
         print("False")
         st.error("Berdasarkan hasil pemeriksaan, kalimat yang diinputkan adalah kalimat TIDAK VALID")
-    
-        
-# algortima_cyk("sekitar lima mahasiswa mengikuti pengabdian tersebut".split())
-# algortima_cyk("ani sedang berlibur di pantai".split())
+        st.table(T)
+
