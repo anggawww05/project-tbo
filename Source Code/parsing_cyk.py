@@ -12,7 +12,7 @@ def algortima_cyk(kalimat):
             for RHS in rule:
                 if len(RHS) == 1 and RHS[0] == kalimat[j]:    
                     T[j][j] += LHS + " "
-
+                
     for j in range(0, banyak_kata):
         for i in range(j, -1, -1):
             for k in range(i, j):
