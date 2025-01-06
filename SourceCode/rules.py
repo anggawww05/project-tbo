@@ -1,14 +1,17 @@
 RULES_CFG = {
-    "K": [["S", "P"], ["S", "P", "O"], ["S", "P", "Ket"], ["S", "P", "O", "Ket"], ["S", "P", "Pel"], ["S", "P", "O", "Pel"], ["S", "P", "O", "Pel", "Ket"]],
-    "S": [["NP"]],
-    "NP": [["Pronoun", "Det"], ["Noun"], ["Pronoun"]],
-    "P": [["VP"]],
-    "VP": [["Adv", "Verb"], ["Verb"], ["Prep", "VP"], ["Adv", "VP"]],
+    "K": [["S", "P"], ["NP", "VP"]],  # Top-level rule allows S P or direct NP VP
+    "S": [["NP"]],  # S explicitly maps to NP
+    "P": [["VP"]],  # P explicitly maps to VP
+    "NP": [["Pronoun", "Det"], ["Pronoun"], ["Noun"]],  # Define NP with variations
+    "VP": [["Adv", "Verb"], ["Verb"], ["Adv", "VP"], ["Prep", "VP"]],  # Define VP
+    "X1": [["P", "O"], ["P", "Ket"], ["P", "Pel"], ["P", "X2"]],
+    "X2": [["O", "Ket"], ["O", "Pel"], ["O", "X3"]],
+    "X3": [["Pel", "Ket"]],
     "O": [["NP"]],
     "Ket": [["PP"]],
-    "PP": [["PP", "NP"], ["Prep"]],
+    "PP": [["Prep", "NP"], ["Prep"]],  # Fixed rule for PP (prep phrases)
     "Pel": [["NP"], ["Adjp"]],
-    "Adjp": [["Adjp", "Adv"], ["Adj"]],
+    "Adjp": [["Adj", "Adv"], ["Adj"]],
     "Pronoun": [["Ia"], ["anake"], ["adinne"]],
     "Noun": [["roko"], ["paon"], ["wastra"], ["tukad"], ["buku"], ["warung"], ["i meme"], ["putu agus"], ["nyoman"], ["nasi"]],
     "Verb": [["melali"], ["mablanja"], ["nyakan"], ["ngumbah"], ["melajah"], ["meliang"], ["medaar"]],
