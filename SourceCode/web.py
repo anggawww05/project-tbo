@@ -6,10 +6,10 @@ st.set_page_config(layout='centered', page_title="Parsing Kalimat Baku Bahasa Ba
     ## "Final Project Teori Bahasa dan Otomata"
     ##### Dengan algoritma CYK
     Oleh Kelompok 1 Kelas C :\n 
-    I Ngurah Komang Agus Suryadiyatmika. S (2208561031)\n
-    I Kadek Revan Aditya Prawira (2208561050)\n
-    Devon Vivian Gunawan (2208561081)\n
-    I Putu Aditya Pradana (2208561124)\n
+    Mirza Ali Fahlevi (2308561003)\n
+    I Dewa Ayu Agung Rai Ratna Karang (2308561021)\n
+    I Putu Andika Arsana Putra (2308561063)\n
+    Anak Agung Gede Angga Putra Wibawa (2308561099)\n
     GitHub:
     """
 })
