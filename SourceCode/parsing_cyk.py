@@ -6,8 +6,7 @@ class LeftCornerParser:
         self.rules = rules
         self.table = []
 
-<<<<<<< HEAD
-    def parse(self, tokens):
+def parse(self, tokens):
         self.table = [[[] for _ in range(len(tokens) + 1)] for _ in range(len(tokens))]
         for i, token in enumerate(tokens):
             for lhs, rhs in self.rules.items():
@@ -36,7 +35,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-=======
+
 def algortima_cyk(kalimat):
 
     banyak_kata = len(kalimat)
@@ -66,4 +65,4 @@ def algortima_cyk(kalimat):
         # print("False")
         st.error("Berdasarkan hasil pemeriksaan, kalimat yang diinputkan adalah kalimat TIDAK VALID")
         st.table(T)
->>>>>>> ad9132efa6700f56f425c0ad7f8476bde5eb3633
+
