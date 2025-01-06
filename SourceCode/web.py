@@ -45,5 +45,6 @@ def tampilan_web():
             result = algortima_cyk(list_string)
             st.write(result)
 
+
 if __name__ == "__main__":
     tampilan_web()
